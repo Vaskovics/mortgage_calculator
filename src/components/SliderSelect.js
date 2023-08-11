@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import SliderComponent from './Common/SliderComponent'
 
-const SliderSelect = ({ data, setData }) => {
+const SliderSelect = ({ data, setData, ltv }) => {
 
   const onChangeSelect = (e, value) => {
     console.log(value)
@@ -17,6 +17,8 @@ const SliderSelect = ({ data, setData }) => {
         onChange={(e, value) => setData(data => {
           return ({
             ...data,
+            deposit: value * 0.2,
+            mortgageAmount: value * 0.8,
             homeValue: value,
           });
         })}
@@ -34,15 +36,51 @@ const SliderSelect = ({ data, setData }) => {
         onChange={(e, value) => setData(data => {
           return ({
             ...data,
+            mortgageAmount: (data.homeValue - value),
             deposit: value,
           });
         })}
         value={data.deposit}
         amount={data.deposit}
         unit='£'
+        ltv={100 - ltv}
       />
 
+      <SliderComponent
+        label="Mortgage Amount"
+        def={data.mortgageAmount}
+        min={0}
+        max={data.homeValue}
+        step={1000}
+        onChange={(e, value) => setData(data => {
+          return ({
+            ...data,
+            deposit: (data.homeValue - value),
+            mortgageAmount: value,
+          });
+        })}
+        value={data.mortgageAmount}
+        amount={data.mortgageAmount}
+        unit='£'
+        ltv={ltv}
+      />
 
+      <SliderComponent
+        label="Interest Rate"
+        def={data.interestRate}
+        min={0}
+        max={10}
+        step={0.01}
+        onChange={(e, value) => setData(data => {
+          return ({
+            ...data,
+            interestRate: value,
+          });
+        })}
+        value={data.interestRate}
+        amount={data.interestRate}
+        unit='%'
+      />
 
     </Fragment>
   )

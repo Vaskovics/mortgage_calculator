@@ -10,7 +10,8 @@ const SliderComponent = ({
   onChange,
   amount,
   label,
-  unit
+  unit,
+  ltv,
 }) => {
   return (
     <div >
@@ -42,6 +43,12 @@ const SliderComponent = ({
           <Typography color="text.secondary" variant="caption">
             {unit} { min }
           </Typography>
+
+          {ltv && (
+            <Typography color="text.secondary" variant="caption">
+              {'%'} { ltv }
+            </Typography>
+          )}
 
           <Typography color="text.secondary" variant="caption">
             {unit} { max }
