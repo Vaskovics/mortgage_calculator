@@ -50,7 +50,7 @@ This is a simple Mortgage Calculator web application built using React.js and Ma
 
 - React.js
 - Material-UI
-- React Hooks (useState, useEffect)
+- React Hooks
 - Chart.js (for pie chart visualization)
 - CSS (styled-components) for styling and theming
 
