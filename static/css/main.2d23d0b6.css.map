@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.2d23d0b6.css","mappings":"AAAA,YACE,YACF,CAEA,QACE,oBACF","sources":["components/result.css"],"sourcesContent":[".pie g text {\n  fill: goldenrod\n}\n\n*[title] {\n  background-color: red;\n}"],"names":[],"sourceRoot":""}
