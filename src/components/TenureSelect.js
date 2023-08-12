@@ -11,7 +11,7 @@ const TenureSelect = ({ data, setData }) => {
   const handleChange = (event) => {
     setData({
       ...data,
-      loanTerm: event.target.value,
+      mortgageLength: event.target.value,
     });
   }
 
@@ -22,7 +22,7 @@ const TenureSelect = ({ data, setData }) => {
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={data.loanTerm}
+        value={data.mortgageLength}
         label="Mortgage term"
         onChange={handleChange}
       >
