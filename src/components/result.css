@@ -1,3 +1,7 @@
-.pie text {
-  fill: white;
+.pie g text {
+  fill: goldenrod
+}
+
+*[title] {
+  background-color: red;
 }
